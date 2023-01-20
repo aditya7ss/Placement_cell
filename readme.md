@@ -5,6 +5,8 @@ It is built using NodeJs, ExpressJs, MongoDB, EJS and JavaScript.
 
 ### 🔗 Hosted link: [placement cell]
 
+https://placement-cell-fkfj.onrender.com
+
 ![Screenshot 2023-01-18 210543](https://user-images.githubusercontent.com/100330745/213638462-d8f897bd-2955-4313-90f8-4b4336b8511b.png)
 
 

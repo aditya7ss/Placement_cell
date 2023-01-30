@@ -3,10 +3,9 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const app = express();
-const {  MONGODB_URL, SESSION_SECRET_KEY } = process.env;
+// const {  MONGODB_URL, SESSION_SECRET_KEY } = process.env;
 const PORT=8000;
-
-
+require('dotenv').config()
 const expressLayouts = require("express-ejs-layouts");
 
 // used for session cookie
@@ -32,14 +31,14 @@ app.set("views", "./views");
 app.use(
   session({
     name: "placement-cell",
-    secret: SESSION_SECRET_KEY,
+    secret: process.env.SESSION_SECRET_KEY,
     saveUninitialized: false,
     resave: false,
     cookie: {
       maxAge: 1000 * 60 * 100,
     },
     store: MongoStore.create({
-      mongoUrl: 'mongodb://localhost:27017',
+      mongoUrl: process.env.MONGODB_URL,
       autoRemove: "disabled",
     }),
     function(err) {
